@@ -1,0 +1,624 @@
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE DATABASE "postgres" ENCODING = 'UTF8'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "postgres" ENCODING = 'UTF8'[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (2.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(737815420147457505)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEmployees (20240606091058)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (23.5ms)[0m  [1m[35mCREATE TABLE "employees" ("id" bigserial primary key, "employee_code" character varying NOT NULL, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "email" character varying NOT NULL, "phone_number" character varying[] DEFAULT '{}', "doj" date NOT NULL, "salary" decimal NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240606091058"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(737815420147457505)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mEmployee Delete All (0.4ms)[0m  [1m[31mDELETE FROM "employees"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(737815420147457505)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEmployees (20240606091058)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.2ms)[0m  [1m[35mDROP TABLE "employees"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20240606091058"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(737815420147457505)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(737815420147457505)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEmployees (20240606091058)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "employees" ("id" bigserial primary key, "employee_code" character varying NOT NULL, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "email" character varying NOT NULL, "phone_number" character varying[] DEFAULT '{}', "doj" date NOT NULL, "salary" decimal NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240606091058"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(737815420147457505)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mEmployee Delete All (0.4ms)[0m  [1m[31mDELETE FROM "employees"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mEmployee Delete All (0.4ms)[0m  [1m[31mDELETE FROM "employees"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mEmployee Delete All (0.4ms)[0m  [1m[31mDELETE FROM "employees"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mEmployee Delete All (0.4ms)[0m  [1m[31mDELETE FROM "employees"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mEmployee Delete All (0.4ms)[0m  [1m[31mDELETE FROM "employees"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mEmployee Delete All (0.4ms)[0m  [1m[31mDELETE FROM "employees"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mEmployee Delete All (0.4ms)[0m  [1m[31mDELETE FROM "employees"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mEmployee Delete All (0.4ms)[0m  [1m[31mDELETE FROM "employees"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mEmployee Delete All (0.4ms)[0m  [1m[31mDELETE FROM "employees"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.6ms)[0m  [1m[32mINSERT INTO "employees" ("employee_code", "first_name", "last_name", "email", "phone_number", "doj", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["employee_code", "EMP7D2396"], ["first_name", "Employee1"], ["last_name", "Lastname1"], ["email", "employee1@example.com"], ["phone_number", "{1234567890,0987654321}"], ["doj", "2023-06-25"], ["salary", "94174.0"], ["created_at", "2024-06-06 09:33:03.577781"], ["updated_at", "2024-06-06 09:33:03.577781"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("employee_code", "first_name", "last_name", "email", "phone_number", "doj", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["employee_code", "EMP364A4F"], ["first_name", "Employee2"], ["last_name", "Lastname2"], ["email", "employee2@example.com"], ["phone_number", "{1234567890,0987654321}"], ["doj", "2024-02-25"], ["salary", "141802.0"], ["created_at", "2024-06-06 09:33:03.585978"], ["updated_at", "2024-06-06 09:33:03.585978"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("employee_code", "first_name", "last_name", "email", "phone_number", "doj", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["employee_code", "EMP9D44AA"], ["first_name", "Employee3"], ["last_name", "Lastname3"], ["email", "employee3@example.com"], ["phone_number", "{1234567890,0987654321}"], ["doj", "2024-06-04"], ["salary", "67638.0"], ["created_at", "2024-06-06 09:33:03.590363"], ["updated_at", "2024-06-06 09:33:03.590363"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.7ms)[0m  [1m[32mINSERT INTO "employees" ("employee_code", "first_name", "last_name", "email", "phone_number", "doj", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["employee_code", "EMP77E931"], ["first_name", "Employee4"], ["last_name", "Lastname4"], ["email", "employee4@example.com"], ["phone_number", "{1234567890,0987654321}"], ["doj", "2023-07-03"], ["salary", "113207.0"], ["created_at", "2024-06-06 09:33:03.596367"], ["updated_at", "2024-06-06 09:33:03.596367"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.5ms)[0m  [1m[32mINSERT INTO "employees" ("employee_code", "first_name", "last_name", "email", "phone_number", "doj", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["employee_code", "EMP876217"], ["first_name", "Employee5"], ["last_name", "Lastname5"], ["email", "employee5@example.com"], ["phone_number", "{1234567890,0987654321}"], ["doj", "2024-04-24"], ["salary", "61912.0"], ["created_at", "2024-06-06 09:33:03.605703"], ["updated_at", "2024-06-06 09:33:03.605703"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.4ms)[0m  [1m[32mINSERT INTO "employees" ("employee_code", "first_name", "last_name", "email", "phone_number", "doj", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["employee_code", "EMP479CF6"], ["first_name", "Employee6"], ["last_name", "Lastname6"], ["email", "employee6@example.com"], ["phone_number", "{1234567890,0987654321}"], ["doj", "2023-09-29"], ["salary", "92474.0"], ["created_at", "2024-06-06 09:33:03.612765"], ["updated_at", "2024-06-06 09:33:03.612765"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("employee_code", "first_name", "last_name", "email", "phone_number", "doj", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["employee_code", "EMP24AB96"], ["first_name", "Employee7"], ["last_name", "Lastname7"], ["email", "employee7@example.com"], ["phone_number", "{1234567890,0987654321}"], ["doj", "2023-12-29"], ["salary", "82150.0"], ["created_at", "2024-06-06 09:33:03.617771"], ["updated_at", "2024-06-06 09:33:03.617771"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.4ms)[0m  [1m[32mINSERT INTO "employees" ("employee_code", "first_name", "last_name", "email", "phone_number", "doj", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["employee_code", "EMP820ADA"], ["first_name", "Employee8"], ["last_name", "Lastname8"], ["email", "employee8@example.com"], ["phone_number", "{1234567890,0987654321}"], ["doj", "2023-10-31"], ["salary", "110009.0"], ["created_at", "2024-06-06 09:33:03.622050"], ["updated_at", "2024-06-06 09:33:03.622050"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("employee_code", "first_name", "last_name", "email", "phone_number", "doj", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["employee_code", "EMP66D0AE"], ["first_name", "Employee9"], ["last_name", "Lastname9"], ["email", "employee9@example.com"], ["phone_number", "{1234567890,0987654321}"], ["doj", "2023-10-21"], ["salary", "113365.0"], ["created_at", "2024-06-06 09:33:03.626203"], ["updated_at", "2024-06-06 09:33:03.626203"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("employee_code", "first_name", "last_name", "email", "phone_number", "doj", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["employee_code", "EMPC67775"], ["first_name", "Employee10"], ["last_name", "Lastname10"], ["email", "employee10@example.com"], ["phone_number", "{1234567890,0987654321}"], ["doj", "2024-01-20"], ["salary", "93555.0"], ["created_at", "2024-06-06 09:33:03.630286"], ["updated_at", "2024-06-06 09:33:03.630286"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEmployee Load (0.9ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+Started POST "/employees" for 127.0.0.1 at 2024-06-06 15:14:33 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/shree/EmployeeManagement/app/controllers/employees_controller.rb:16: syntax error, unexpected ',', expecting =>
+...email, phone_numbers: [], :doj, :salary)
+...                              ^
+/home/shree/EmployeeManagement/app/controllers/employees_controller.rb:25: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/employees_controller.rb:16: syntax error, unexpected ',', expecting =>
+app/controllers/employees_controller.rb:25: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/employees_controller.rb:16: syntax error, unexpected ',', expecting =>
+app/controllers/employees_controller.rb:25: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/employees" for 127.0.0.1 at 2024-06-06 15:15:36 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/shree/EmployeeManagement/app/controllers/employees_controller.rb:16: syntax error, unexpected ',', expecting =>
+...email, phone_numbers: [], :doj, :salary)
+...                              ^
+/home/shree/EmployeeManagement/app/controllers/employees_controller.rb:25: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/employees_controller.rb:16: syntax error, unexpected ',', expecting =>
+app/controllers/employees_controller.rb:25: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/employees_controller.rb:16: syntax error, unexpected ',', expecting =>
+app/controllers/employees_controller.rb:25: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/employees" for 127.0.0.1 at 2024-06-06 15:16:30 +0530
+  
+SyntaxError (/home/shree/EmployeeManagement/app/controllers/employees_controller.rb:16: syntax error, unexpected ',', expecting =>
+...:email, phone_number: [], :doj, :salary)
+...                              ^
+/home/shree/EmployeeManagement/app/controllers/employees_controller.rb:25: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/employees_controller.rb:16: syntax error, unexpected ',', expecting =>
+app/controllers/employees_controller.rb:25: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/employees_controller.rb:16: syntax error, unexpected ',', expecting =>
+app/controllers/employees_controller.rb:25: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/employees" for 127.0.0.1 at 2024-06-06 15:17:28 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/shree/EmployeeManagement/app/controllers/employees_controller.rb:16: syntax error, unexpected ',', expecting =>
+...:email, phone_number: [], :doj, :salary)
+...                              ^
+/home/shree/EmployeeManagement/app/controllers/employees_controller.rb:25: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/employees_controller.rb:16: syntax error, unexpected ',', expecting =>
+app/controllers/employees_controller.rb:25: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/employees_controller.rb:16: syntax error, unexpected ',', expecting =>
+app/controllers/employees_controller.rb:25: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/employees" for 127.0.0.1 at 2024-06-06 15:18:59 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EmployeesController#create as */*
+Completed 400 Bad Request in 3851ms (ActiveRecord: 0.0ms | Allocations: 46037)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: employee):
+  
+app/controllers/employees_controller.rb:16:in `employee_params'
+app/controllers/employees_controller.rb:5:in `create'
+Started POST "/employees" for 127.0.0.1 at 2024-06-06 15:19:48 +0530
+Processing by EmployeesController#create as */*
+  Parameters: {"employee"=>{"first_name"=>"John", "last_name"=>"Doe", "email"=>"john.doe@example.com", "doj"=>"2024-06-06", "salary"=>50000, "phone_numbers"=>["1234567890", "0987654321"]}}
+Completed 500 Internal Server Error in 3085ms (ActiveRecord: 8.8ms | Allocations: 23872)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'phone_numbers' for Employee.):
+  
+app/controllers/employees_controller.rb:5:in `create'
+Started POST "/employees" for 127.0.0.1 at 2024-06-06 15:20:06 +0530
+Processing by EmployeesController#create as */*
+  Parameters: {"employee"=>{"first_name"=>"John", "last_name"=>"Doe", "email"=>"john.doe@example.com", "doj"=>"2024-06-06", "salary"=>50000, "phone_number"=>["1234567890", "0987654321"]}}
+[31mUnpermitted parameter: :phone_number. Context: { controller: EmployeesController, action: create, request: #<ActionDispatch::Request:0x00007f0168e3d940>, params: {"employee"=>{"first_name"=>"John", "last_name"=>"Doe", "email"=>"john.doe@example.com", "doj"=>"2024-06-06", "salary"=>50000, "phone_number"=>["1234567890", "0987654321"]}, "controller"=>"employees", "action"=>"create"} }[0m
+  [1m[36mEmployee Load (1.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."created_at" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:20:in `generate_employee_code'
+Completed 422 Unprocessable Entity in 2253ms (Views: 0.6ms | ActiveRecord: 2.0ms | Allocations: 7397)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(737815420147457505)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEmployees (20240606091058)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE "employees"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20240606091058"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(737815420147457505)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(737815420147457505)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEmployees (20240606091058)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "employees" ("id" bigserial primary key, "employee_code" character varying NOT NULL, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "email" character varying NOT NULL, "phone_number" character varying[] DEFAULT '{}', "doj" date NOT NULL, "salary" decimal NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240606091058"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(737815420147457505)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/employees" for 127.0.0.1 at 2024-06-06 15:21:51 +0530
+Processing by EmployeesController#create as */*
+  Parameters: {"employee"=>{"first_name"=>"John", "last_name"=>"Doe", "email"=>"john.doe@example.com", "doj"=>"2024-06-06", "salary"=>50000, "phone_number"=>["1234567890", "0987654321"]}}
+[31mUnpermitted parameter: :phone_number. Context: { controller: EmployeesController, action: create, request: #<ActionDispatch::Request:0x00007f0158b73990>, params: {"employee"=>{"first_name"=>"John", "last_name"=>"Doe", "email"=>"john.doe@example.com", "doj"=>"2024-06-06", "salary"=>50000, "phone_number"=>["1234567890", "0987654321"]}, "controller"=>"employees", "action"=>"create"} }[0m
+  [1m[36mEmployee Load (1.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."created_at" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:20:in `generate_employee_code'
+Completed 422 Unprocessable Entity in 5254ms (Views: 0.3ms | ActiveRecord: 7.8ms | Allocations: 8882)
+
+
+Started POST "/employees" for 127.0.0.1 at 2024-06-06 15:22:22 +0530
+Processing by EmployeesController#create as */*
+  Parameters: {"employee"=>{"first_name"=>"John", "last_name"=>"Doe", "email"=>"john.doe@example.com", "doj"=>"2024-06-06", "salary"=>50000, "phone_number"=>["1234567890", "0987654321"]}}
+[31mUnpermitted parameter: :phone_number. Context: { controller: EmployeesController, action: create, request: #<ActionDispatch::Request:0x00007f0169234170>, params: {"employee"=>{"first_name"=>"John", "last_name"=>"Doe", "email"=>"john.doe@example.com", "doj"=>"2024-06-06", "salary"=>50000, "phone_number"=>["1234567890", "0987654321"]}, "controller"=>"employees", "action"=>"create"} }[0m
+[31mUnpermitted parameter: :phone_number. Context: { controller: EmployeesController, action: create, request: #<ActionDispatch::Request:0x00007f0169234170>, params: {"employee"=>{"first_name"=>"John", "last_name"=>"Doe", "email"=>"john.doe@example.com", "doj"=>"2024-06-06", "salary"=>50000, "phone_number"=>["1234567890", "0987654321"]}, "controller"=>"employees", "action"=>"create"} }[0m
+  [1m[36mEmployee Load (1.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."created_at" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:20:in `generate_employee_code'
+Completed 422 Unprocessable Entity in 63552ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 9204)
+
+
+Started POST "/employees" for 127.0.0.1 at 2024-06-06 15:23:28 +0530
+Processing by EmployeesController#create as */*
+  Parameters: {"employee"=>{"first_name"=>"John", "last_name"=>"Doe", "email"=>"john.doe@example.com", "doj"=>"2024-06-06", "salary"=>50000, "phone_number"=>["1234567890", "0987654321"]}}
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."created_at" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:20:in `generate_employee_code'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/employees_controller.rb:7:in `create'
+  [1m[36mEmployee Create (0.7ms)[0m  [1m[32mINSERT INTO "employees" ("employee_code", "first_name", "last_name", "email", "phone_number", "doj", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["employee_code", "EMP0001"], ["first_name", "John"], ["last_name", "Doe"], ["email", "john.doe@example.com"], ["phone_number", "{1234567890,0987654321}"], ["doj", "2024-06-06"], ["salary", "50000.0"], ["created_at", "2024-06-06 09:53:30.112033"], ["updated_at", "2024-06-06 09:53:30.112033"]]
+  ↳ app/controllers/employees_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/employees_controller.rb:7:in `create'
+Completed 201 Created in 1836ms (Views: 0.8ms | ActiveRecord: 8.4ms | Allocations: 10553)
+
+
+Started POST "/employees" for 127.0.0.1 at 2024-06-06 15:24:29 +0530
+Processing by EmployeesController#create as */*
+  Parameters: {"employee"=>{"first_name"=>"Dummy", "last_name"=>"Doe", "email"=>"Test@example.com", "doj"=>"2023-05-16", "salary"=>75000, "phone_number"=>["1234567890", "0987654321"]}}
+  [1m[36mEmployee Load (1.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."created_at" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:20:in `generate_employee_code'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/employees_controller.rb:7:in `create'
+  [1m[36mEmployee Create (1.1ms)[0m  [1m[32mINSERT INTO "employees" ("employee_code", "first_name", "last_name", "email", "phone_number", "doj", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["employee_code", "EMP0002"], ["first_name", "Dummy"], ["last_name", "Doe"], ["email", "Test@example.com"], ["phone_number", "{1234567890,0987654321}"], ["doj", "2023-05-16"], ["salary", "75000.0"], ["created_at", "2024-06-06 09:54:32.718535"], ["updated_at", "2024-06-06 09:54:32.718535"]]
+  ↳ app/controllers/employees_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/employees_controller.rb:7:in `create'
+Completed 201 Created in 2878ms (Views: 1.6ms | ActiveRecord: 4.2ms | Allocations: 6830)
+
+
+  [1m[36mEmployee Load (0.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(737815420147457505)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEmployees (20240606091058)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE "employees"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20240606091058"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(737815420147457505)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(737815420147457505)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEmployees (20240606091058)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "employees" ("id" bigserial primary key, "employee_code" character varying NOT NULL, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "email" character varying NOT NULL, "phone_number" character varying[] DEFAULT '{}', "doj" date NOT NULL, "salary" float NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240606091058"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(737815420147457505)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 15:32:27 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1701)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mEmployee Delete All (0.4ms)[0m  [1m[31mDELETE FROM "employees"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.5ms)[0m  [1m[32mINSERT INTO "employees" ("employee_code", "first_name", "last_name", "email", "phone_number", "doj", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["employee_code", "EMP5B313E"], ["first_name", "Employee1"], ["last_name", "Lastname1"], ["email", "employee1@example.com"], ["phone_number", "{1234567890,0987654321}"], ["doj", "2023-06-28"], ["salary", 148672.0], ["created_at", "2024-06-06 10:02:51.967579"], ["updated_at", "2024-06-06 10:02:51.967579"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("employee_code", "first_name", "last_name", "email", "phone_number", "doj", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["employee_code", "EMP7C7861"], ["first_name", "Employee2"], ["last_name", "Lastname2"], ["email", "employee2@example.com"], ["phone_number", "{1234567890,0987654321}"], ["doj", "2024-04-26"], ["salary", 65422.0], ["created_at", "2024-06-06 10:02:51.972514"], ["updated_at", "2024-06-06 10:02:51.972514"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("employee_code", "first_name", "last_name", "email", "phone_number", "doj", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["employee_code", "EMPE513AD"], ["first_name", "Employee3"], ["last_name", "Lastname3"], ["email", "employee3@example.com"], ["phone_number", "{1234567890,0987654321}"], ["doj", "2024-03-07"], ["salary", 98380.0], ["created_at", "2024-06-06 10:02:51.976416"], ["updated_at", "2024-06-06 10:02:51.976416"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("employee_code", "first_name", "last_name", "email", "phone_number", "doj", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["employee_code", "EMPAFB0F6"], ["first_name", "Employee4"], ["last_name", "Lastname4"], ["email", "employee4@example.com"], ["phone_number", "{1234567890,0987654321}"], ["doj", "2023-06-25"], ["salary", 78915.0], ["created_at", "2024-06-06 10:02:51.980307"], ["updated_at", "2024-06-06 10:02:51.980307"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("employee_code", "first_name", "last_name", "email", "phone_number", "doj", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["employee_code", "EMP4FF430"], ["first_name", "Employee5"], ["last_name", "Lastname5"], ["email", "employee5@example.com"], ["phone_number", "{1234567890,0987654321}"], ["doj", "2024-04-24"], ["salary", 111748.0], ["created_at", "2024-06-06 10:02:51.984075"], ["updated_at", "2024-06-06 10:02:51.984075"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("employee_code", "first_name", "last_name", "email", "phone_number", "doj", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["employee_code", "EMP7BC9C9"], ["first_name", "Employee6"], ["last_name", "Lastname6"], ["email", "employee6@example.com"], ["phone_number", "{1234567890,0987654321}"], ["doj", "2023-11-27"], ["salary", 125445.0], ["created_at", "2024-06-06 10:02:51.990113"], ["updated_at", "2024-06-06 10:02:51.990113"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("employee_code", "first_name", "last_name", "email", "phone_number", "doj", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["employee_code", "EMP71D69A"], ["first_name", "Employee7"], ["last_name", "Lastname7"], ["email", "employee7@example.com"], ["phone_number", "{1234567890,0987654321}"], ["doj", "2024-04-30"], ["salary", 51491.0], ["created_at", "2024-06-06 10:02:51.994012"], ["updated_at", "2024-06-06 10:02:51.994012"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("employee_code", "first_name", "last_name", "email", "phone_number", "doj", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["employee_code", "EMPAE6711"], ["first_name", "Employee8"], ["last_name", "Lastname8"], ["email", "employee8@example.com"], ["phone_number", "{1234567890,0987654321}"], ["doj", "2024-02-10"], ["salary", 143161.0], ["created_at", "2024-06-06 10:02:51.997952"], ["updated_at", "2024-06-06 10:02:51.997952"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("employee_code", "first_name", "last_name", "email", "phone_number", "doj", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["employee_code", "EMP91ECFD"], ["first_name", "Employee9"], ["last_name", "Lastname9"], ["email", "employee9@example.com"], ["phone_number", "{1234567890,0987654321}"], ["doj", "2023-12-07"], ["salary", 132390.0], ["created_at", "2024-06-06 10:02:52.001856"], ["updated_at", "2024-06-06 10:02:52.001856"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.4ms)[0m  [1m[32mINSERT INTO "employees" ("employee_code", "first_name", "last_name", "email", "phone_number", "doj", "salary", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["employee_code", "EMPF3F932"], ["first_name", "Employee10"], ["last_name", "Lastname10"], ["email", "employee10@example.com"], ["phone_number", "{1234567890,0987654321}"], ["doj", "2023-11-02"], ["salary", 142603.0], ["created_at", "2024-06-06 10:02:52.006090"], ["updated_at", "2024-06-06 10:02:52.006090"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 15:32:55 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 4.6ms | Allocations: 5437)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 15:35:41 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 32226ms (Views: 1.3ms | ActiveRecord: 3.0ms | Allocations: 69060)
+
+
+  [1m[36mEmployee Pluck (1.9ms)[0m  [1m[34mSELECT "employees"."doj" FROM "employees"[0m
+  [1m[36mEmployee Load (1.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Load (1.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Update (1.0ms)[0m  [1m[33mUPDATE "employees" SET "doj" = $1, "updated_at" = $2 WHERE "employees"."id" = $3[0m  [["doj", "2024-04-01"], ["updated_at", "2024-06-06 10:17:03.067532"], ["id", 10]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 15:47:40 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 21ms (Views: 0.4ms | ActiveRecord: 5.7ms | Allocations: 7798)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Update (0.5ms)[0m  [1m[33mUPDATE "employees" SET "salary" = $1, "updated_at" = $2 WHERE "employees"."id" = $3[0m  [["salary", "100000.0"], ["updated_at", "2024-06-06 10:19:36.083040"], ["id", 10]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 15:49:39 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1399)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 15:53:05 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/tax_controller.rb:4:in `deduction'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 5.4ms | Allocations: 7194)
+
+
+  
+NoMethodError (undefined method `map' for #<Employee id: 10, employee_code: "EMPF3F932", first_name: "Employee10", last_name: "Lastname10", email: "employee10@example.com", phone_number: ["1234567890", "0987654321"], doj: "2024-04-01", salary: 100000.0, created_at: "2024-06-06 10:02:52.006090000 +0000", updated_at: "2024-06-06 10:19:36.083040000 +0000">
+Did you mean?  tap):
+  
+app/controllers/tax_controller.rb:5:in `deduction'
+  [1m[36mEmployee Load (1.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Destroy (1.7ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 1]]
+  [1m[36mEmployee Load (1.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Load (1.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Destroy (2.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 2]]
+  [1m[36mEmployee Load (1.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Destroy (1.7ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 3]]
+  [1m[36mEmployee Load (1.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Destroy (2.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 4]]
+  [1m[36mEmployee Load (1.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Destroy (1.9ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 5]]
+  [1m[36mEmployee Load (1.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Destroy (2.0ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 6]]
+  [1m[36mEmployee Load (1.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Destroy (1.7ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 7]]
+  [1m[36mEmployee Load (1.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Destroy (2.2ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 8]]
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Destroy (1.0ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 9]]
+  [1m[36mEmployee Load (1.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 15:54:37 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+  [1m[36mEmployee Load (1.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Update (1.1ms)[0m  [1m[33mUPDATE "employees" SET "doj" = $1, "updated_at" = $2 WHERE "employees"."id" = $3[0m  [["doj", "2023-04-01"], ["updated_at", "2024-06-06 10:26:39.086911"], ["id", 10]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 127250ms (Views: 0.7ms | ActiveRecord: 4.7ms | Allocations: 23642)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 15:56:48 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 60795ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 12940)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:01:06 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 3.2ms | Allocations: 4439)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:01:23 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 21331ms (Views: 0.6ms | ActiveRecord: 2.8ms | Allocations: 13253)
+
+
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Update (0.5ms)[0m  [1m[33mUPDATE "employees" SET "doj" = $1, "updated_at" = $2 WHERE "employees"."id" = $3[0m  [["doj", "2023-05-15"], ["updated_at", "2024-06-06 10:35:27.399107"], ["id", 10]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:05:31 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 3.1ms | Allocations: 4444)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:06:50 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 31738ms (Views: 0.6ms | ActiveRecord: 2.9ms | Allocations: 13716)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:07:33 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 10631ms (Views: 0.8ms | ActiveRecord: 3.3ms | Allocations: 11737)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:08:16 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 66460ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 8030)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:10:35 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 29125ms (Views: 0.6ms | ActiveRecord: 3.1ms | Allocations: 11756)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:15:22 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+  [1m[36mEmployee Load (1.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Update (1.1ms)[0m  [1m[33mUPDATE "employees" SET "doj" = $1, "updated_at" = $2 WHERE "employees"."id" = $3[0m  [["doj", "2023-04-01"], ["updated_at", "2024-06-06 10:46:41.708846"], ["id", 10]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 88622ms (Views: 1.1ms | ActiveRecord: 3.6ms | Allocations: 18615)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:16:54 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 102601ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 13260)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:19:38 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 10549ms (Views: 0.6ms | ActiveRecord: 4.5ms | Allocations: 13252)
+
+
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Update (0.6ms)[0m  [1m[33mUPDATE "employees" SET "doj" = $1, "updated_at" = $2 WHERE "employees"."id" = $3[0m  [["doj", "2023-05-10"], ["updated_at", "2024-06-06 10:51:24.210069"], ["id", 10]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:24:37 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 4.4ms | Allocations: 4440)
+
+
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Update (0.4ms)[0m  [1m[33mUPDATE "employees" SET "doj" = $1, "updated_at" = $2 WHERE "employees"."id" = $3[0m  [["doj", "2023-04-01"], ["updated_at", "2024-06-06 10:55:01.108943"], ["id", 10]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:25:06 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 642)
+
+
+  [1m[36mEmployee Load (1.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Update (1.3ms)[0m  [1m[33mUPDATE "employees" SET "doj" = $1, "updated_at" = $2 WHERE "employees"."id" = $3[0m  [["doj", "2023-05-10"], ["updated_at", "2024-06-06 10:55:17.779784"], ["id", 10]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:25:44 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 54199ms (Views: 1.1ms | ActiveRecord: 3.2ms | Allocations: 11893)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:28:02 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 3.7ms | Allocations: 4470)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:28:41 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 2.9ms | Allocations: 4453)
+
+
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Update (0.4ms)[0m  [1m[33mUPDATE "employees" SET "doj" = $1, "updated_at" = $2 WHERE "employees"."id" = $3[0m  [["doj", "2023-04-01"], ["updated_at", "2024-06-06 10:59:09.596881"], ["id", 10]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:29:13 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 653)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:29:35 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 4.7ms | Allocations: 4453)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:29:59 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 3.0ms | Allocations: 4452)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:30:33 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 3.3ms | Allocations: 4441)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:32:09 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 2.9ms | Allocations: 4444)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:32:26 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 88136ms (Views: 0.4ms | ActiveRecord: 3.0ms | Allocations: 12348)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:34:30 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 943ms (Views: 0.7ms | ActiveRecord: 3.0ms | Allocations: 10273)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:35:00 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 25919ms (Views: 0.6ms | ActiveRecord: 3.2ms | Allocations: 15716)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:36:29 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 3.0ms | Allocations: 4443)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:37:01 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 3.1ms | Allocations: 4439)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:45:55 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 6.3ms | Allocations: 7081)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:46:25 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 166354ms (Views: 0.4ms | ActiveRecord: 5.0ms | Allocations: 20548)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:49:39 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 33ms (Views: 0.2ms | ActiveRecord: 4.6ms | Allocations: 39080)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:49:53 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 3.0ms | Allocations: 4464)
+
+
+Started GET "/tax_deduction" for 127.0.0.1 at 2024-06-06 16:50:08 +0530
+Processing by TaxController#deduction as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/tax_controller.rb:5:in `map'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 4.3ms | Allocations: 4454)
+
+
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" ORDER BY "employees"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
